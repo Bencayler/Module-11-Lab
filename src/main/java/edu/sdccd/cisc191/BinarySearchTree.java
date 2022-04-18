@@ -10,7 +10,20 @@ public class BinarySearchTree {
      */
     public BSTNode contains(BSTNode root, String needle) {
         // TODO: fill this out, you can choose any order of traversal
-        return root;
+        if (root == null) {
+            return null;
+        }
+        //Condition 1. we found the value
+        if (root.getData() == needle) {
+            return root;
+        }
+        if (root.getLeft() != null) {
+            return contains(root.getLeft(), needle);
+        }
+        if (root.getRight() != null) {
+            return contains(root.getRight(), needle);
+        }
+        return null;
     }
 
     /**
@@ -22,6 +35,20 @@ public class BinarySearchTree {
      */
     public BSTNode fromArray(String[] array, int start, int end) {
         // TODO: fill this out, you can choose any order of traversal
-        return null;
+        if (start > end) {
+            return null;
+        }
+
+        // Get middle element to make root
+        int mid = (start + end) / 2;
+        BSTNode node = new BSTNode(array[mid]);
+
+        // Construct left subtree
+        node.left = fromArray(array, start, mid - 1);
+
+        // Construct right subtree
+        node.right = fromArray(array, mid + 1, end);
+
+        return node;
     }
 }

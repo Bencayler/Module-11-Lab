@@ -3,8 +3,8 @@ package edu.sdccd.cisc191;
 public class BSTNode {
     private String data;
 
-    private BSTNode left;
-    private BSTNode right;
+    public BSTNode left;
+    public BSTNode right;
 
     public BSTNode(String data) {
         this.data = data;
