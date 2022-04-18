@@ -10,17 +10,21 @@ public class BinarySearchTree {
      */
     public BSTNode contains(BSTNode root, String needle) {
         // TODO: fill this out, you can choose any order of traversal
+        BSTNode n = null;
+
         if (root == null) {
             return null;
         }
 
-        if (root.getData() == needle) {
+        if (root.getData().equals(needle)) {
             return root;
         }
-        if (root.getLeft() != null) {
+
+        else if (root.getLeft() != null) {
             return contains(root.getLeft(), needle);
         }
-        if (root.getRight() != null) {
+
+        else if (root.getRight() != null) {
             return contains(root.getRight(), needle);
         }
         return null;
