@@ -13,7 +13,7 @@ public class BinarySearchTree {
         if (root == null) {
             return null;
         }
-        //Condition 1. we found the value
+
         if (root.getData() == needle) {
             return root;
         }
@@ -38,16 +38,15 @@ public class BinarySearchTree {
         if (start > end) {
             return null;
         }
-
         // Get middle element to make root
         int mid = (start + end) / 2;
         BSTNode node = new BSTNode(array[mid]);
 
         // Construct left subtree
-        node.left = fromArray(array, start, mid - 1);
+        node.setLeft(fromArray(array, start, mid - 1));
 
         // Construct right subtree
-        node.right = fromArray(array, mid + 1, end);
+        node.setRight(fromArray(array, mid + 1, end));
 
         return node;
     }
