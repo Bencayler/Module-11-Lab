@@ -9,7 +9,6 @@ public class BinarySearchTree {
      * @return the first BSTNode containing the needle, null if doesn't exist
      */
     public BSTNode contains(BSTNode root, String needle) {
-        // TODO: fill this out, you can choose any order of traversal
         BSTNode retVal = null;
 
         if (root == null) {
@@ -42,7 +41,6 @@ public class BinarySearchTree {
      * @return the root node of the generated BST
      */
     public BSTNode fromArray(String[] array, int start, int end) {
-        // TODO: fill this out, you can choose any order of traversal
         if (start > end) {
             return null;
         }
