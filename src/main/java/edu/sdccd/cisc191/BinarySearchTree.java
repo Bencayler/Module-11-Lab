@@ -9,7 +9,7 @@ public class BinarySearchTree {
      * @return the first BSTNode containing the needle, null if doesn't exist
      */
     public BSTNode contains(BSTNode root, String needle) {
-        BSTNode retVal = null;
+        BSTNode retVal; // Initial Value is NULL
 
         if (root == null) {
             return null;
